@@ -1,0 +1,63 @@
+.chatboxcontainer
+{
+	display: inline-block;
+	margin: 0px 40px 0px 40px;
+}
+.chatbox
+{
+	
+	background-color: #AAAAFF;
+	text-align: left;
+	
+	width: 600px;
+	height: 300px;
+	max-width: 600px;
+	max-height: 300px;
+
+	border: 2px solid #000000;
+	padding: 10px;
+
+	display: table-cell;
+	vertical-align: bottom;
+	overflow: scroll;
+	scroll-behavior: smooth;
+
+
+
+	display: flex;
+	flex-direction: column-reverse;
+}
+.chatbox span
+{
+	font-family: 'courier', monospace;
+	font-size: 15px;
+	padding: 7px;
+	margin: 10px;
+	max-width: 580px;
+	word-wrap: break-word;
+	display: block;
+}
+
+.spancontainer
+{
+}
+
+.yourmsg
+{
+	background-color: #CFCFCF;
+}
+.othermsg
+{
+	background-color: #F4F4F4;
+}
+
+.imgInsideMsg
+{
+	max-width: 300px;
+	display: block;
+	border: 2px solid;
+}
+.imgInsideMsgContainer
+{
+	max-width: 300px;
+}
