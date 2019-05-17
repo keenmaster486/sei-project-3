@@ -31,9 +31,19 @@ class Login extends Component
 			body: JSON.stringify(input),
 		    headers: {"Content-Type": "application/json"}
 		});
-		loginResponse = loginResponse.json();
-		this.props.changeState({loggedIn: await loginResponse})
-		console.log(await loginResponse);
+		loginResponse = await loginResponse.json();
+		this.props.changeState({loggedIn: loginResponse})
+		console.log(loginResponse);
+
+		if (!loginResponse.success)
+		{
+			alert("error");
+		}
+
+
+
+		//const success = await loginResponse.success;
+		//if (!success) {alert("error");}
 	}
 
 	render()

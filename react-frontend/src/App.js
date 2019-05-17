@@ -5,7 +5,7 @@ import './App.css';
 import NewUser from './NewUser/NewUser';
 import Login from './Login/Login';
 
-import ChatBox from './ChatBox/ChatBox';
+import MainPage from './MainPage/MainPage';
 
 class App extends Component
 {
@@ -80,8 +80,7 @@ class App extends Component
 				{this.state.loggedIn.success ?
 					(
 						<div>
-							<ChatBox></ChatBox>
-							<br/>
+							<MainPage apiURL={this.state.apiURL} userId={this.state.loggedIn.userId}></MainPage>
 						</div>
 					)
 					:

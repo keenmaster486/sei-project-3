@@ -36,7 +36,11 @@ router.post('/', function(req, res) //POST route to create a new user!!
 	if (req.body.password !== req.body.password2)
 	{
 		//Uh oh, the passwords don't match!! We gotta get out of here...
-		res.send(`Passwords did not match! Try again...<br><a href="/users/new">Back to registration page</a>`);
+		//res.send(`Passwords did not match! Try again...<br><a href="/users/new">Back to registration page</a>`);
+		res.json(
+		{
+			success: false
+		});
 	}
 	else
 	{
@@ -70,14 +74,22 @@ router.post('/', function(req, res) //POST route to create a new user!!
 						else
 						{
 							console.log("Created a new user");
-							res.send(`Congratulations ${req.body.username}, you have now registered as a user! Be sure to log in now!<br><a href="/auth/login">Go to login page</a>`);
+							//res.send(`Congratulations ${req.body.username}, you have now registered as a user! Be sure to log in now!<br><a href="/auth/login">Go to login page</a>`);
+							res.json(
+							{
+								success: true
+							});
 						}
 					});
 				}
 				else
 				{
 					console.log("User create failed: username already exists");
-					res.send("This username is taken! Try a different one.");
+					//res.send("This username is taken! Try a different one.");
+					res.json(
+					{
+						success: false
+					});
 				}
 			}
 		});
@@ -93,7 +105,8 @@ router.get('/:id', function(req, res)
 		else
 		{
 			console.log(`GET /users/${req.params.id}`);
-			res.send(`GET /users/${req.params.id}`);
+			//res.send(`GET /users/${req.params.id}`);
+			res.json(foundUser);
 		}
 	});
 });

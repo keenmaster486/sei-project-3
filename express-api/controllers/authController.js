@@ -66,9 +66,10 @@ router.post('/login', function(req, res)
 				//res.send("login attempt successful");
 				//console.log(req.session);
 
-
+				//We'll go ahead and send the current user id to the client side:
 				res.json({
-					success: true
+					success: true,
+					userId: foundUser._id
 				});
 			}
 			else

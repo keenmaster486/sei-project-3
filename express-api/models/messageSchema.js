@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const messageSchema = new Schema(
 {
-	user: {type: Schema.Types.ObjectId, ref: 'User'}
-	text: {type: String, required: true},
+	userId: {type: Schema.Types.ObjectId, ref: 'User'},
+	userdisplayname: {type: String, required: true},
+	text: String,
 	image: String,
 	video: String,
 	url: String

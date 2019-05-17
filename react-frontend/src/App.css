@@ -78,3 +78,22 @@ button
 	clear: both;
 	padding: 30px;
 }
+
+
+.reset
+{
+	max-width: initial;
+	max-height: initial;
+	min-width: initial;
+	min-height: initial;
+	font-family: initial;
+	font-size: initial;
+	color: initial;
+	background-color: initial;
+}
+
+.checkbox
+{
+	width: 25px;
+	height: 25px;
+}

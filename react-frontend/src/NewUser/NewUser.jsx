@@ -15,7 +15,7 @@ class NewUser extends Component
 		};
 	}
 
-	handleSubmit = (input, e) =>
+	handleSubmit = async (input, e) =>
 	{
 		e.preventDefault();
 		//console.log("handleSubmit on NewUser was called");
@@ -26,11 +26,25 @@ class NewUser extends Component
 
 		const submitURL = this.props.apiURL + "/users";
 		
-		fetch(submitURL, {
+		let newUserResponse = await fetch(submitURL, {
 			method: 'POST',
 			body: JSON.stringify(input),
 		    headers: {"Content-Type": "application/json"}
 		});
+
+		//console.log(await newUserResponse.json());
+
+		const temp = await newUserResponse.json();
+		const success = await temp.success;
+
+		if (success)
+		{
+			alert("created user successfully");
+		}
+		else
+		{
+			alert("error");
+		}
 	}
 
 	render()
